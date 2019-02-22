@@ -8,5 +8,8 @@ See:
 * How to install it in the Galaxy container: https://github.com/bgruening/docker-galaxy-stable
 
 Plan:
-* Create a basic tool using Python `requests` that submits a the reaction SMILES and gets the predicted sequences.
-* To do: check that the Galaxy container has `requests` installed, otherwise add to the `docker-compose` file.
+- [x] Create a basic command line tool using Python `requests` that submits a the reaction SMILES and gets the predicted sequences.
+- [x] Create a Galaxy Tool XML file.
+- [] Check that the Galaxy container has `requests` installed, otherwise add to the `docker-compose` file.
+- [] Mount the folder with the tool in the container.
+- [] Install the tool in Galaxy.
