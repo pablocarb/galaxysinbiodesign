@@ -27,7 +27,7 @@ if __name__ == "__main__":
         url = arg.server
         assert 'smarts' in row
         r = requests.post( os.path.join(url, 'Query') , json={'smarts': row['smarts']} )
-        res = json.loads( r.content )
+        res = json.loads( r.content.decode('utf-8') )
         assert res['data'] is not None
         val = json.loads( res['data'] )
         assert 'Seq. ID' in val and len(val['Seq. ID'])>0
