@@ -10,6 +10,8 @@ See:
 Plan:
 - [x] Create a basic command line tool using Python `requests` that submits a the reaction SMILES and gets the predicted sequences.
 - [x] Create a Galaxy Tool XML file.
-- [ ] Check that the Galaxy container has `requests` installed, otherwise add to the `docker-compose` file.
-- [ ] Mount the folder with the tool in the container.
-- [ ] Install the tool in Galaxy.
+- [x] Check that the Galaxy container has `requests` installed, otherwise add to the `docker-compose` file.
+- [x] Mount the folder with the tool in the container.
+- [x] Install the tool in Galaxy.
+- [ ] Create a tool using Galaxy XML that post JSON request and receives a JSON response (no local tool running in the Galaxy server).
+- [ ] Submit the purely XML tool to the [Galaxy Tool Shed](https://toolshed.g2.bx.psu.edu/).
