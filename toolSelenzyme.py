@@ -14,7 +14,7 @@ import os
 import json
 
 def arguments():
-    parser = argparse.ArgumentParser(description='toolSelenzyme: Enzyme sequence selection. Pablo Carbonell, SYNBIOCHEM, 2019', usage="selenzyme infile outfile")
+    parser = argparse.ArgumentParser(description='toolSelenzyme: Enzyme sequence selection. Pablo Carbonell, SYNBIOCHEM, 2019')
     parser.add_argument('infile', 
                         help='Input csv file.')
     parser.add_argument('outfile', 
