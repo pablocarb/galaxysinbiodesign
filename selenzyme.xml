@@ -7,13 +7,12 @@
         python3 toolSelenzyme.py $input $output
     ]]></command>
     <inputs>
+        <param type="data" name="input1" format="csv" />
     </inputs>
     <outputs>
+        <data name="output1" format="csv" from_work_dir="out.csv" />
     </outputs>
     <help><![CDATA[
-        This tool calls Selenzyme to select enzyme sequences for a given target reaction represented in SMARTS.
+        TODO: Fill in help.
     ]]></help>
-    <citations>
-        <citation type="doi">10.1093/bioinformatics/bty065</citation>
-    </citations>
 </tool>
