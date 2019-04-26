@@ -13,7 +13,7 @@
         <data name="output1" format="csv" from_work_dir="out.csv" />
     </outputs>
     <help><![CDATA[
-        usage: selenzyme infile outfile
+        usage: toolSelenzyme.py [-h] [-server SERVER] infile outfile
 
 toolSelenzyme: Enzyme sequence selection. Pablo Carbonell, SYNBIOCHEM, 2019
 
