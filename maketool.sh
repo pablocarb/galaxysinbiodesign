@@ -8,8 +8,7 @@ planemo tool_init --force \
     --id 'selenzyme' \
     --name 'Query Selenzyme: Enzyme sequence selection' \
     --requirement requests@2 \
-    --requirement python@3 \
-    --example_command 'python3 toolSelenzyme.py $input $output' \
+    --example_command 'python $__tool_directory__ toolSelenzyme.py $input $output' \
     --example_input 'reaction.csv' \
     --example_output 'out.csv' \
     --doi 10.1093/bioinformatics/bty065 \

@@ -1,10 +1,9 @@
 <tool id="selenzyme" name="Query Selenzyme: Enzyme sequence selection" version="0.1.0">
     <requirements>
         <requirement type="package" version="2">requests</requirement>
-        <requirement type="package" version="3">python</requirement>
     </requirements>
     <command detect_errors="exit_code"><![CDATA[
-        python3 toolSelenzyme.py $input $output
+        python $__tool_directory__ toolSelenzyme.py $input $output
     ]]></command>
     <inputs>
         <param type="data" name="input1" format="csv" />
