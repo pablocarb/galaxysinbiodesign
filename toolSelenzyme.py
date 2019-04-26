@@ -1,3 +1,12 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mar 19
+
+@author: Pablo Carbonell
+@description: Query Selenzme: Enzyme sequence selection.
+
+"""
 import requests
 import argparse
 import csv
@@ -14,7 +23,7 @@ def arguments():
                         help='Selenzyme server.')
     return parser
 
-# Test, to be improved
+# Output columns, to be improved
 columns = ['Seq. ID', 'Score', 'Organism Source', 'Description']
 
 if __name__ == "__main__":

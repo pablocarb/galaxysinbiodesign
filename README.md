@@ -6,6 +6,7 @@ See:
 
 * Tutorial to create a Galaxy tool: https://galaxyproject.org/admin/tools/add-tool-tutorial/
 * How to install it in the Galaxy container: https://github.com/bgruening/docker-galaxy-stable
+* Example for Uniprot: https://toolshed.g2.bx.psu.edu/repository?repository_id=c8774310981b07c5
 
 Plan:
 - [x] Create a basic command line tool using Python `requests` that submits a the reaction SMILES and gets the predicted sequences.
