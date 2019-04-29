@@ -7,7 +7,7 @@
 
 planemo tool_init --force \
     --id 'selenzyme' \
-    --name 'Selenzye' \
+    --name 'Selenzyme' \
     --description 'enzyme sequence selection from reaction template' \
     --requirement requests@2 \
     --example_command 'python $__tool_directory__/toolSelenzyme.py $input1 $output1' \
