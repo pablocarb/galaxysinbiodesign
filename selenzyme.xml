@@ -4,7 +4,7 @@
         <requirement type="package" version="2">requests</requirement>
     </requirements>
     <command detect_errors="exit_code"><![CDATA[
-        python $__tool_directory__/toolSelenzyme.py $input1 $output1
+        python $__tool_directory__/toolSelenzyme.py $input1 $output1 -server $server
     ]]></command>
     <inputs>
         <param type="data" name="input1" format="csv" />
