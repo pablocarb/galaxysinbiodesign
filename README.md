@@ -1,4 +1,6 @@
-# galaxy_selenzyme
+# Galaxy wrappers for SynBio Design Tools 
+
+## galaxy_selenzyme
 
 Creating a tool within Galaxy to run Selenzyme.
 
@@ -13,6 +15,9 @@ Plan:
 - [x] Create a Galaxy Tool XML file.
 - [x] Check that the Galaxy container has `requests` installed, otherwise add to the `docker-compose` file.
 - [x] Mount the folder with the tool in the container.
-- [x] Install the tool in Galaxy.
+- [x] Install the tool locally in Galaxy.
+- [x] Use planemo in order to create a repository in the toolshed.
+- [x] Register in the toolshed.
+- [x] Install in the Galaxy container from the toolshed.
 - [ ] Create a tool using Galaxy XML that post JSON request and receives a JSON response (no local tool running in the Galaxy server).
 - [ ] Submit the purely XML tool to the [Galaxy Tool Shed](https://toolshed.g2.bx.psu.edu/).
