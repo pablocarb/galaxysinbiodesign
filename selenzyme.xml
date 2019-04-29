@@ -7,8 +7,7 @@
     ]]></command>
     <inputs>
         <param type="data" name="input1" format="csv" />
-	<param name="server" type="string" label="Selenzyme RES server"
-       value="http:://selenzyme.synbiochem.co.uk/REST" help="Selenzyme REST server" />
+	<param name="server" type="text" label="Selenzyme RES server" value="http://selenzyme.synbiochem.co.uk/REST" help="Selenzyme REST server" />
     </inputs>
     <outputs>
         <data name="output1" format="csv" from_work_dir="out.csv" />
