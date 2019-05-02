@@ -1,0 +1,33 @@
+<tool id="optbiodes" name="OptBioDes" version="0.1.0">
+    <description>optimal synbio design</description>
+    <requirements>
+        <requirement type="package" version="2">requests</requirement>
+    </requirements>
+    <command detect_errors="exit_code"><![CDATA[
+        python $__tool_directory__/toolOptBioDes.py $input1 $input2 $output1 $output2 -server $server
+    ]]></command>
+    <inputs>
+        <param type="data" name="input1" format="csv" />
+        <param type="integer" name="input2" value="48" label="Library size" help="Library size" />
+    	<param name="server" type="text" label="OptBioDes RES server" value="http://doe.synbiochem.co.uk/REST" help="OptBioDes REST server" />
+    </inputs>
+    <outputs>
+        <data name="output1" format="csv" from_work_dir="out1.csv" />
+        <data name="output2" format="csv" from_work_dir="out2.csv" />
+    </outputs>
+    <help><![CDATA[
+        usage: toolOptBioDes.py [-h] [-server SERVER] infile outfile diagfile
+
+toolOptBioDes: Optimal SynBio Design. Pablo Carbonell, SYNBIOCHEM, 2019
+
+positional arguments:
+  infile          Input xlsx file (DoE specificiations).
+  outfile         Output csv design file.
+  diagfile        Output csv diagnostics file.
+
+optional arguments:
+  -h, --help      show this help message and exit
+  -server SERVER  OptBioDes server.
+
+    ]]></help>
+</tool>

@@ -16,6 +16,17 @@ planemo tool_init --force \
     --example_output 'out.csv' \
     --doi 10.1093/bioinformatics/bty065 \
     --help_from_command 'python3 toolSelenzyme.py -h'
+    
+# Generate tool backbone (additional params need to be entered manually 
+planemo tool_init --force \
+    --id 'optbiodes' \
+    --name 'OptBioDes' \
+    --description 'optimal synbio design' \
+    --requirement requests@2 \
+    --example_command 'python $__tool_directory__/toolOptBioDes.py $input1 $output1 $output2 -server $server' \
+    --example_input 'example.xlsx' \
+    --example_output 'out.csv out2.csv' \
+    --help_from_command 'python3 toolOptBioDes.py -h'
    
 # Init shed repository
 planemo shed_init . --force \
@@ -30,8 +41,18 @@ planemo shed_create \
     --shed_target toolshed \
     --shed_key_from_env TOOLSHED 
 
+# Create repository in the toolshed
+planemo shed_create \
+    --shed_target testtoolshed \
+    --shed_key_from_env TESTTOOLSHED 
+
+
 # Update repository in the toolshed
 planemo shed_update \
     --check_diff --shed_target toolshed \
     --shed_key_from_env TOOLSHED
 
+# Update repository in the toolshed
+planemo shed_update \
+    --check_diff --shed_target testtoolshed \
+    --shed_key_from_env TESTTOOLSHED
