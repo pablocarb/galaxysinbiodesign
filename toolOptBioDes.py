@@ -23,7 +23,7 @@ def arguments():
                         help='Output csv design file.')
     parser.add_argument('diagfile', 
                         help='Output csv diagnostics file.')
-    parser.add_argument('-server', default='http://doe.synbiochem.co.uk/REST',
+    parser.add_argument('-server', default='http://optbiodes.synbiochem.co.uk/REST',
                         help='OptBioDes server.')
     return parser
 
