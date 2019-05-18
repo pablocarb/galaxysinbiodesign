@@ -26,13 +26,14 @@ To learn more about Selenzyme:
 
 Carbonell, Pablo, et al. Selenzyme: enzyme selection tool for pathway design. *Bioinformatics* 34: 2153-2154, (2018). https://doi.org/10.1093/bioinformatics/bty065
 
-## galaxy_OpBioDes
+## galaxy_OptBioDes
 
 Creating a tool within Galaxy to run OptBioDes (optimal design of experiments).
 
 Plan:
-- [x] Create a basic command line tool using Python `requests` that submits a the reaction SMILES and gets the predicted sequences.
+- [x] Create a basic command line tool using Python that submits a ``CSV`` with the design specifications sheet.
 - [x] Create a Galaxy Tool XML file.
 - [x] Use planemo in order to create a repository in the toolshed.
 - [x] Register in the toolshed.
 - [x] Install in the Galaxy container from the toolshed.
+- [ ] Write documentiation about the design specifications sheet.
