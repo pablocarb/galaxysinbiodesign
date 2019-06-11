@@ -27,6 +27,20 @@ planemo tool_init --force \
     --example_input 'example.xlsx' \
     --example_output 'out.csv out2.csv' \
     --help_from_command 'python3 toolOptBioDes.py -h'
+
+# Generate tool backbone (additional params need to be entered manually 
+planemo tool_init --force \
+    --id 'rpviz' \
+    --name 'rpVisualizer' \
+    --description 'Pathway visualizer' \
+    --requirement libsbml \
+    --requirement networkx \
+    --requirement beatifulsoup4 \
+    --example_command 'python $__tool_directory__/toolVisualizer.py $input1 $output1' \
+    --example_input 'path.sbml' \
+    --example_output 'out.html' \
+    --help_from_command 'python3 toolVisualizer.py -h'
+
    
 # Init shed repository
 planemo shed_init . --force \
