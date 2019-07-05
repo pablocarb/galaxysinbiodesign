@@ -24,25 +24,31 @@ def arguments():
     return parser
 
 # Output columns, to be improved
-columns = ['Seq. ID', 'Score', 'Organism Source', 'Description']
+columns = ['smarts', 'Seq. ID', 'Score', 'Organism Source', 'Description']
 
 if __name__ == "__main__":
     parser = arguments()
     arg = parser.parse_args()
     assert os.path.exists(arg.infile)
-    with open(arg.infile) as handler:
+    header = True
+    with open(arg.infile) as handler, open(arg.outfile, 'w' ) as writer:
+        cw = csv.writer( writer )
         cv = csv.DictReader(handler)
-        row = next(cv)
-        url = arg.server
-        assert 'smarts' in row
-        r = requests.post( os.path.join(url, 'Query') , json={'smarts': row['smarts']} )
-        res = json.loads( r.content.decode('utf-8') )
-        assert res['data'] is not None
-        val = json.loads( res['data'] )
-        assert 'Seq. ID' in val and len(val['Seq. ID'])>0
-        with open(arg.outfile, 'w' ) as writer:
-            cw = csv.writer( writer )
-            cw.writerow( columns )
-            for ix in sorted(val['Seq. ID'], key=lambda z: int(z)):
-                cw.writerow( [val[j][ix] for j in columns] )
+        for row in cv:
+            url = arg.server
+            assert 'smarts' in row
+            smarts = row['smarts']
+            r = requests.post( os.path.join(url, 'Query') , json={'smarts': smarts} )
+            res = json.loads( r.content.decode('utf-8') )
+            try:
+                assert res['data'] is not None
+                val = json.loads( res['data'] )
+                assert 'Seq. ID' in val and len(val['Seq. ID'])>0
+                if header:
+                    cw.writerow( columns )
+                    header = False
+                for ix in sorted(val['Seq. ID'], key=lambda z: int(z)):
+                    cw.writerow( [smarts]+[val[j][ix] for j in columns[1:]] )
+            except:
+                continue
 
