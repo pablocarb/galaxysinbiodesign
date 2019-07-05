@@ -1,0 +1,38 @@
+<tool id="optbiodes" name="OptBioDes" version="0.1.0">
+    <description>Optimal synbio design: from genetic parts to SBOL-compliant constructs description</description>
+    <requirements>
+        <requirement type="package" version="2">requests</requirement>
+    </requirements>
+    <command detect_errors="exit_code"><![CDATA[
+        python $__tool_directory__/toolOptBioDes.py $input1 -partsfile $input2 -genesfile $input3 $output1 $output2 -sbolOut $output3 -server $server
+    ]]></command>
+    <inputs>
+        <param type="integer" name="input1" value="48" label="Library size" help="Library size" />
+        <param type="data" name="input2" format="csv" />
+        <param type="data" name="input3" format="csv" />
+    	<param name="server" type="text" label="OptBioDes RES server" value="http://optbiodes.synbiochem.co.uk/REST" help="OptBioDes REST server" />
+    </inputs>
+    <outputs>
+        <data name="output1" format="csv" from_work_dir="out1.csv" />
+        <data name="output2" format="csv" from_work_dir="out2.csv" />
+        <data name="output3" format="csv" from_work_dir="out3.csv" />
+    </outputs>
+    <help><![CDATA[
+        usage: toolOptBioDes.py [-h] [-server SERVER] infile outfile diagfile
+
+toolOptBioDes: Optimal SynBio Design. Pablo Carbonell, SYNBIOCHEM, 2019
+
+arguments:
+  size            Library size
+  partsfile       Input genetic parts csv file.
+  genesfile       Input gene list csv file.
+  outfile         Output csv design file.
+  diagfile        Output csv diagnostics file.
+  sbolfile        Output SBOL combinatorial genetic library
+
+optional arguments:
+  -h, --help      show this help message and exit
+  -server SERVER  OptBioDes server.
+
+    ]]></help>
+</tool>
