@@ -8,7 +8,7 @@
    ]]></command>
     <inputs>
         <param type="data" name="input1" format="tar" label="Input pathways"/>
-	<param name="input2" type="text" value="sbml" label="Input format">
+	<param name="input2" type="select" value="sbml" label="Input format">
 	  <option value="sbml">sbml</option>
 	  <option value="csv">CSV</option>
 	</param>
