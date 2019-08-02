@@ -13,6 +13,7 @@ import csv
 import os
 import json
 import tarfile
+import shutil
 
 def arguments():
     parser = argparse.ArgumentParser(description='toolRPViz: Pathway visualizer. Pablo Carbonell, SYNBIOCHEM, 2019')
@@ -39,12 +40,12 @@ def testApp(url):
     print( res )
     
 def pathwayUpload( arg ):
+    # Post request
     files = { 'file': open(arg.infile, 'rb' ) }
     data = {'selenzyme_table': arg.selenzyme_table, 'input_format': arg.input_format}
     print('Sending query to '+arg.server)
     r=requests.post( arg.server+'/Query',files=files,data=data )
-    if arg.outfolder is None:
-        arg.outfolder = os.path.dirname( arg.outfile )
+    # Read response
     if not os.path.exists(arg.outfolder):
         os.mkdir(arg.outfolder)
     outtar = os.path.join( arg.outfolder, 'out.tar' )
@@ -53,7 +54,7 @@ def pathwayUpload( arg ):
     tar = tarfile.open(outtar)
     tar.extractall(path=arg.outfolder)
     html = os.path.join( arg.outfolder, 'index.html' )
-    shutil.cp( html, arg.outfile )  
+    shutil.copy( html, arg.outfile )  
     print( 'Files extracted' )
 
 
