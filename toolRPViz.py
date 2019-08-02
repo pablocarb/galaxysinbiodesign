@@ -45,7 +45,7 @@ def pathwayUpload( arg ):
     r=requests.post( arg.server+'/Query',files=files,data=data )
     if arg.outfolder is None:
         arg.outfolder = os.path.dirname( arg.outfile )
-    if not os.path.exists(outfolder):
+    if not os.path.exists(arg.outfolder):
         os.mkdir(arg.outfolder)
     outtar = os.path.join( arg.outfolder, 'out.tar' )
     open(outtar,'wb').write( r.content )
