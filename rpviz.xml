@@ -4,7 +4,7 @@
         <requirement type="package">requests</requirement>
     </requirements>
     <command detect_errors="exit_code"><![CDATA[
-     python $__tool_directory__/toolRPViz.py $input1 $output1 -server $server --input_format $input2 --selenzyme_table $input3 --outfolder $outputfile.extra_files_path
+     python $__tool_directory__/toolRPViz.py $input1 $output1 -server $server --input_format $input2 --selenzyme_table $input3 --outfolder $output1.extra_files_path
    ]]></command>
     <inputs>
         <param type="data" name="input1" format="tar" label="Input pathways"/>
