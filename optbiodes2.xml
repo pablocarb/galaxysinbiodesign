@@ -1,4 +1,4 @@
-<tool id="optbiodes" name="OptBioDes" version="0.1.0">
+<tool id="optbiodes2" name="OptSynBioDes" version="0.1.0">
     <description>Optimal synbio design: from genetic parts to SBOL-compliant constructs description</description>
     <requirements>
         <requirement type="package" version="2">requests</requirement>
@@ -8,8 +8,8 @@
     ]]></command>
     <inputs>
         <param type="integer" name="input1" value="48" label="Library size" help="Library size" />
-        <param type="data" name="input2" format="csv" />
-        <param type="data" name="input3" format="csv" />
+        <param type="data" name="input2" label="Regulatory parts list" format="csv" />
+        <param type="data" name="input3" label="Genes list" format="csv" />
     	<param name="server" type="text" label="OptBioDes RES server" value="http://optbiodes.synbiochem.co.uk/REST" help="OptBioDes REST server" />
     </inputs>
     <outputs>

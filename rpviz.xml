@@ -7,13 +7,18 @@
      python $__tool_directory__/toolRPViz.py $input1 $output1 -server $server
    ]]></command>
     <inputs>
-        <param type="data" name="input1" format="xml" />
+        <param type="data" name="input1" format="tar" label="Input pathways"/>
+	<param name="input2" type="text" value="sbml" label="Input format">
+	  <option value="sbml">sbml</option>
+	  <option value="csv">CSV</option>
+	</param>
+	<param name="input3" type="boolean" truevalue="Y" falsevalue="N" checked="false" label="Retrieve Selenzyme information" />
     	<param name="server" type="text" label="RPViz RES server" value="http://rpviz.synbiochem.co.uk/REST" help="RPviz REST server" />
     </inputs>
     <outputs>
         <data name="output1" format="html" from_work_dir="out.html" />
     </outputs>
     <help><![CDATA[
-        python3 toolRPViz.py [server SERVER] inputfile outputfile
+        python3 toolRPViz.py [server SERVER] inputfile outputfile --input_format $input2 --selenzyme_table  --outfolder $outputfile.extra_files_path
     ]]></help>
 </tool>

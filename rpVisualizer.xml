@@ -1,0 +1,25 @@
+<tool id="rpviz2" name="rpVisualizer" version="0.1.0" python_template_version="3.5">
+    <description>Pathway visualizer</description>
+    <requirements>
+        <requirement type="package">python-libsbml</requirement>
+        <requirement type="package">networkx</requirement>
+        <requirement type="package">beautifulsoup4</requirement>
+        <requirement type="package">rdkit</requirement>
+    </requirements>
+    <command detect_errors="exit_code"><![CDATA[
+     git clone https://github.com/pablocarb/rpviz.git $__tool_directory__/rpviz;
+     cd $__tool_directory__/rpviz; git pull; cd ..;
+     cd $__tool_directory__;
+     echo `which python` > $__tool_directory__/info.log;
+     PYTHONPATH="$__tool_directory__" python $__tool_directory__/toolVisualizer.py $input1 $output1
+   ]]></command>
+    <inputs>
+        <param type="data" name="input1" format="xml" />
+    </inputs>
+    <outputs>
+        <data name="output1" format="html" from_work_dir="out.html" />
+    </outputs>
+    <help><![CDATA[
+        python3 toolVisualizer.py inputfile outputfile
+    ]]></help>
+</tool>
