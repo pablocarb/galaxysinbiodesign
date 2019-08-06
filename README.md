@@ -37,3 +37,12 @@ Plan:
 - [x] Register in the toolshed.
 - [x] Install in the Galaxy container from the toolshed.
 - [ ] Write documentiation about the design specifications sheet.
+
+## galaxy_RPViz
+
+A tool to visualize pathways by querying an RPViz server.
+
+* Note *: `RPViz` returns an interactive HTML file that runs javascript. The `RPViz` tools has to be included in the [Galaxy whitelist](https://docs.galaxyproject.org/en/latest/admin/config.html).
+
+
+
