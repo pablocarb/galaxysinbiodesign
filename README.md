@@ -42,7 +42,7 @@ Plan:
 
 A tool to visualize pathways by querying an RPViz server.
 
-* Note *: `RPViz` returns an interactive HTML file that runs javascript. The `RPViz` tools has to be included in the [Galaxy whitelist](https://docs.galaxyproject.org/en/latest/admin/config.html).
+`RPViz` returns an interactive HTML file that requires javascript. The `RPViz` tool has to be included in the [Galaxy whitelist](https://docs.galaxyproject.org/en/latest/admin/config.html).
 
 
 
