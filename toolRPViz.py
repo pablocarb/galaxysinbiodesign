@@ -42,7 +42,7 @@ def testApp(url):
 def pathwayUpload( arg ):
     # Post request
     data = {'selenzyme_table': arg.selenzyme_table, 'input_format': arg.input_format}
-    files = { 'file': open(infile, 'rb' ), 'data': ('data.json', json.dumps(data)) }
+    files = { 'file': open(arg.infile, 'rb' ), 'data': ('data.json', json.dumps(data)) }
     print('Sending query to '+arg.server)
     r=requests.post(url+'/Query',files=files)
     # Read response
