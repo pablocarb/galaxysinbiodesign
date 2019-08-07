@@ -41,10 +41,10 @@ def testApp(url):
     
 def pathwayUpload( arg ):
     # Post request
-    files = { 'file': open(arg.infile, 'rb' ) }
     data = {'selenzyme_table': arg.selenzyme_table, 'input_format': arg.input_format}
+    files = { 'file': open(infile, 'rb' ), 'data': ('data.json', json.dumps(data)) }
     print('Sending query to '+arg.server)
-    r=requests.post( arg.server+'/Query',files=files,data=data )
+    r=requests.post(url+'/Query',files=files)
     # Read response
     if not os.path.exists(arg.outfolder):
         os.mkdir(arg.outfolder)
